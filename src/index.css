@@ -1,0 +1,24 @@
+/* FONT FAMILIES:
+    font-family: 'Oxygen', sans-serif;
+    font-family: 'Acme', sans-serif;
+    font-family: 'Sunflower', sans-serif;
+*/
+
+header {
+    font-family: 'Oxygen', sans-serif;
+}
+
+nav a.brand-logog > i.material-icons {
+    border: 1px solid purple;
+    color: blueviolet;
+}
+
+.page-footer {
+    padding: 20px 0;
+}
+
+#test1, #test2, #test3, #test4 {
+    height: 15em;
+    width: 100%;
+    border: 1px solid black;
+}   

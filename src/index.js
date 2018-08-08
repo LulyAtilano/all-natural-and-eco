@@ -1,52 +1,70 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./index.css";
-class App extends React.Component{
-    render(){
-        return (
+
+class App extends React.Component {
+  constructor(props) {
+    this.state = {
+      products: [],
+    };
+  }
+  
+  componentWillMount(){
+    fetch('https://api.mercadolibre.com/categories/MLM146238')
+    .then(response => response.json())
+    .then(products => {
+
+      products.results.forEach(product => {
+        let data = {
+          category: product.children_categories.name,
+          items: product.children_categories.total_items_in_this_category
+        }
+        this.setState({ products: this.state.products.concat([data]) })
+      })
+    })
+  }
+
+  render() {
+    console.log( this.state.products.length)
+    if (this.state.products.length > 0 ) {
+      return (
         <div>
-            <nav class="nav-extended">
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Logo</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <header class="nav-extended">
+            <nav class="nav-wrappe cyan darken-4">
+              <a href="#" class="brand-logo"> <i class="material-icons purple-text text-lighten-3">spa</i> All Natural & Eco 
+              <i class="material-icons right purple-text text-lighten-3">spa</i></a>
+              <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
+                <li><a href="#"> Product </a></li>
+                <li><a href="#"> Articles </a></li>
               </ul>
-            </div>
-            <div class="nav-content">
-              <ul class="tabs tabs-transparent">
-                <li class="tab"><a href="#test1">Test 1</a></li>
-                <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-                <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
-                <li class="tab"><a href="#test4">Test 4</a></li>
-              </ul>
-            </div>
-          </nav>
-        
+            </nav>
+          </header>
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="#"> Product </a></li>
+            <li><a href="#"> Articles </a></li>
           </ul>
         
-          <div id="test1" class="col s12">Test 1</div>
-          <div id="test2" class="col s12">Test 2</div>
-          <div id="test3" class="col s12">Test 3</div>
-          <div id="test4" class="col s12">Test 4</div>
-
-        <footer class="page-footer">
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          <main> 
+            <div> 
+              { this.state.products.map(product => <section> items={product.name} category={product.category} </section>) }
             </div>
-          </div>
-        </footer>
-        </div>
-        )
-    };
+          </main>
+          
+          <footer>
+            <div class="page-footer cyan darken-4">
+              <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
+      </div>
+    )
+  } 
+  <p> Cargando productos....</p>
 }
 
-ReactDOM.render(<App/>, document.getElementById("meme"));
+//ReactDOM.render(<App/>, document.getElementById("root"));
+export default App;
