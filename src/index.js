@@ -3,16 +3,16 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-//import Products from './components/Products';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MercadoLibreApp from './app';
 
 class App extends React.Component {
   render(){
     return (
       <div>
         <Header/>
-      
+        <div className="row"> <MercadoLibreApp /> </div>
         <Footer/>
       </div>
     )
