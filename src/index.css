@@ -3,22 +3,43 @@
     font-family: 'Acme', sans-serif;
     font-family: 'Sunflower', sans-serif;
 */
-
-header {
-    font-family: 'Oxygen', sans-serif;
+body{
+    width: 100;
 }
 
-nav a.brand-logog > i.material-icons {
-    border: 1px solid purple;
-    color: blueviolet;
+.col .row {
+    margin: 0;
+}
+
+header.nav-extended {
+    font-family: 'Oxygen', sans-serif;
+    padding: 15px;
+    width: 100%;
+}
+
+header div.col.s6 {
+    box-sizing: border-box;
+    display: inline-flex;
+    font-size: 1.2em;
+    height: 60px;
+}
+
+header div > i.material-icons {
+    margin: 0 15px;
+}
+
+header div:last-child > a {
+    margin: 0 auto;
+    border: 1px solid violet;
+    padding: 10px 5px;
+}
+
+main#root {
+    height: 15em;
+    width: 100%;
 }
 
 .page-footer {
+    font-size: 18px;
     padding: 20px 0;
 }
-
-#test1, #test2, #test3, #test4 {
-    height: 15em;
-    width: 100%;
-    border: 1px solid black;
-}   
