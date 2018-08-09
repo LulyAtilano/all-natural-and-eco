@@ -11,6 +11,7 @@ body{
     margin: 0;
 }
 
+/* HEADER */
 header.nav-extended {
     font-family: 'Oxygen', sans-serif;
     padding: 15px;
@@ -34,11 +35,26 @@ header div:last-child > a {
     padding: 10px 5px;
 }
 
+/* MAIN */
 main#root {
     height: 15em;
     width: 100%;
 }
 
+/* STYLE - PRODUCTS */
+
+
+div.card-content span.card-title {
+    font-family: 'Sunflower', sans-serif;
+    font-size: 18px;
+}
+
+div.card-content > p {
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+/* FOOTER */
 .page-footer {
     font-size: 18px;
     padding: 20px 0;
