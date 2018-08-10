@@ -6,6 +6,7 @@ import "./index.css";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MercadoLibreApp from './app';
+//import Routes from './routes';
 
 class App extends React.Component {
   render(){
