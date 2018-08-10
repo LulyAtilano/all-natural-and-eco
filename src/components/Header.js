@@ -12,8 +12,8 @@ class Header extends React.Component {
           <i class="material-icons purple-text text-lighten-3">spa</i>
         </div>
         <div class="valign-wrapper col s6">
-          <a class="white-text"> Products </a>
-          <a class="white-text"> Articles </a>
+          <a class="white-text dropdown-trigger btn" data-target="dropdown1"> Products </a>
+          <a class="white-text dropdown-trigger btn" data-target="dropdown1"> Articles </a>
         </div>
       </header>
     )
